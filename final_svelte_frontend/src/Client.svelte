@@ -1,7 +1,5 @@
 <script lang="ts">
-    import loadClients, { clients } from "./apiCall";
-    import { type ClientResponse } from "./apiCall";
-
+    import  { clients } from "./apiCall";
 </script>
 
 <main>

@@ -1,5 +1,6 @@
 <script lang="ts">
 import Client from "./Client.svelte";
+import { isLoading } from "./apiCall";
 import loadClients, { clients } from "./apiCall";
 
 export let inputText=""
@@ -12,8 +13,13 @@ export let inputText=""
   
 <button on:click={()=>loadClients(inputText)} disabled={inputText.length < 3}>Search</button>
 
+{#if isLoading===true} 
+<p>loading...</p>
+{:else}
+{#if clients}
  <Client />
-
+ {/if}
+{/if}
 </main>
 
 <style>
